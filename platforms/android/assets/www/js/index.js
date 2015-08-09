@@ -34,7 +34,6 @@ var app = {
     // function, we must explicitly call 'app.receivedEvent(...);'
     onDeviceReady: function() {
         app.receivedEvent('deviceready');
-        console.log(navigator.camera);
     },
     // Update DOM on a Received Event
     receivedEvent: function(id) {
@@ -46,6 +45,7 @@ var app = {
         receivedElement.setAttribute('style', 'display:block;');
 
         console.log('Received Event: ' + id);
+        location.href = "camera.html#dashboard"
     }
 };
 

@@ -5,13 +5,15 @@ $(document).on('pageinit', function() {
 		    destinationType: Camera.DestinationType.FILE_URI
 		});
 	});
+
+	$(".exit").click(function(){
+		navigator.app.exitApp();
+	});
 });
 
 function onSuccess(imageURI) {
-	$("#cameraPic").remove();
-	$("#main").append('<img src="'+imageURI+'" id="cameraPic" style="width:auto;height:120px;"/>');
+	$("#imageContainer").append('<img src="'+imageURI+'" style="width:auto;height:120px;"></img>');
 }
 
 function onFail(message) {
-    $("#cameraPic").remove();
 }

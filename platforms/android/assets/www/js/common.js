@@ -5,25 +5,15 @@ $(document).on('pageinit', function() {
 		    destinationType: Camera.DestinationType.FILE_URI
 		});
 	});
+
+	$(".exit").click(function(){
+		navigator.app.exitApp();
+	});
 });
 
 function onSuccess(imageURI) {
-	/*navigator.notification.alert(
-	    'Your Photo has been uploaded', // message
-	    okay,                           // callback
-	    'Photo Uploaded',               // title
-	    'OK'                            // buttonName
-	);*/
-	$("#cameraPic").remove();
-	$("#main").append('<img src="'+imageURI+'" id="cameraPic"/>');
+	$("#imageContainer").append('<img src="'+imageURI+'" style="width:auto;height:120px;"></img>');
 }
 
 function onFail(message) {
-    $("#cameraPic").remove();
-    /*navigator.notification.alert(
-	    message, 						// message
-	    okay,                           // callback
-	    'Photo Upload Failed',          // title
-	    'OK'                            // buttonName
-	);*/
 }
